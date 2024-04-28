@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+</head>
+<body>
+    <h1> Courses List</h1>
+
+    <table border="2">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Instructor</th>
+            <th>Rating</th>
+        </thead>
+        {% for course in courses %}
+        <tr>
+            <td>{{ course.id }}</td>
+            <td>{{ course.name }}</td>
+            <td>{{ course.description }}</td>
+            <td>{{ course.instructor }}</td>
+            <td>{{ course.rating }}</td>
+            <td><a href="/add_course/{{ course.id }}"> UPDATE </a></td>
+            <td><a href="/delete/{{ course.id }}">DELETE</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br/><br/><br/>
+
+    <a href="/add_course">Add Course</a>
+
+</body>
+</html>
